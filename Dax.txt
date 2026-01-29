@@ -1,0 +1,12 @@
+Qtd Ocorrencias por Cliente = 
+SUMX(
+    VALUES(BASE[Nome]),
+    CALCULATE(
+        COUNTROWS(
+            FILTER(
+                BASE,
+                BASE[MICRO MOTIVO OCORRÊNCIA] <> "Sem Ocorrência"
+            )
+        )
+    )
+)
